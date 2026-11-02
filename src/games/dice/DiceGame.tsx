@@ -14,7 +14,6 @@ export default function DiceGame() {
   const [rolling, setRolling] = useState(false)
   const [result, setResult] = useState<Result | null>(null)
   const [lastRoll, setLastRoll] = useState<{ player: number; value: number } | null>(null)
-  const [target, setTarget] = useState<number | null>(null)
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const rollingRef = useRef(false)
 
@@ -22,7 +21,7 @@ export default function DiceGame() {
     if (timer.current) clearTimeout(timer.current)
     rollingRef.current = false
     setRolling(false); setRemaining(playerCount * 5); setCurrentPlayer(1); setDie(null)
-    setResult(null); setLastRoll(null); setTarget(null)
+    setResult(null); setLastRoll(null)
   }, [playerCount])
 
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current) }, [])
@@ -30,7 +29,7 @@ export default function DiceGame() {
   const changePlayers = (count: number) => {
     if (timer.current) clearTimeout(timer.current)
     rollingRef.current = false
-    setPlayerCount(count); setRemaining(count * 5); setCurrentPlayer(1); setDie(null); setRolling(false); setResult(null); setLastRoll(null); setTarget(null)
+    setPlayerCount(count); setRemaining(count * 5); setCurrentPlayer(1); setDie(null); setRolling(false); setResult(null); setLastRoll(null)
   }
 
   const roll = () => {
@@ -51,7 +50,6 @@ export default function DiceGame() {
     }, 850)
   }
 
-  const chooseTarget = (player: number) => setTarget(player)
   const initialValue = playerCount * 5
 
   return <GameLayout title="サイコロチキンレース" playerCount={playerCount} onPlayerCountChange={changePlayers} onReset={reset}>

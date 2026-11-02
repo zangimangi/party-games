@@ -1,4 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({ plugins: [react()], base: '/party-games/' })
+export default defineConfig({
+  plugins: [react()],
+  base: '/party-games/',
+  build: { outDir: 'docs' },
+})
