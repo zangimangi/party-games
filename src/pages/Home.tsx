@@ -6,7 +6,7 @@ export default function Home({ onOpenGame }: Props) {
     <header className="home-top"><a className="brand" href="#/"><span className="brand-mark">飲</span> 飲みゲー！</a><span className="top-note">飲ませ！かませ！</span></header>
     <section className="hero">
       <div className="hero-copy"><span className="eyebrow">飲みゲー用パーティーゲームコレクション</span><h1>あの子のパンティー<br /><em>何色や。</em></h1><p>見せつけたれ睾丸。目に焼き付けろ！</p><a href="#games" className="hero-link">ゲームを選ぶ <span>↓</span></a></div>
-      <div className="hero-art" aria-hidden="true"><div className="sun-shape"/><div className="hero-die">⚄</div><span className="spark spark-one">✳</span><span className="spark spark-two">✦</span><span className="art-caption">GO HOME?<br />いや、アルコール</span></div>
+      <div className="hero-art" aria-hidden="true"><div className="sun-shape"/><div className="hero-die">⚄</div><span className="spark spark-one">✳︎</span><span className="spark spark-two">✦︎</span><span className="art-caption">GO HOME?<br />いや、アルコール</span></div>
     </section>
     <section className="games-section" id="games"><div className="section-heading"><div><span className="eyebrow">PICK YOUR GAME</span><h2>ゲームを<span>選択</span></h2></div><span className="game-count">{String(games.length).padStart(2, '0')} GAMES</span></div>
       <div className="game-grid">{games.map((game) => <article className={`game-card ${game.accent}`} key={game.id}>
