@@ -1,5 +1,9 @@
 type Props = { onOpenGame: (game: string) => void }
-const games = [{ id: 'dice', number: '01', title: 'サイコロチキンレース', description: '決められた値を超えたらアウト！ピッタリを狙え！！', players: '2–20人', icon: '⚄', accent: 'coral' }]
+const games = [
+  { id: 'dice', number: '01', title: 'サイコロブラックジャック', description: '決められた値を超えたらアウト！ピッタリを狙え！！', players: '2–20人', icon: '⚄', accent: 'coral' },
+  { id: 'high-low', number: '02', title: 'ハイアンドロー', description: '画面の数字は、出題者の数字より高い？低い？', players: '2–20人', icon: '↕', accent: 'coral' },
+  { id: 'minority', number: '03', title: '多数派ゲーム', description: '○か×で回答。みんなの答えが出そろったら少数派を発表！', players: '3–20人', icon: '○×', accent: 'coral' },
+]
 
 export default function Home({ onOpenGame }: Props) {
   return <main className="home-page">

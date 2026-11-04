@@ -52,7 +52,7 @@ export default function DiceGame() {
 
   const initialValue = playerCount * 5
 
-  return <GameLayout title="サイコロチキンレース" playerCount={playerCount} onPlayerCountChange={changePlayers} onReset={reset}>
+  return <GameLayout title="サイコロブラックジャック" playerCount={playerCount} onPlayerCountChange={changePlayers} onReset={reset}>
     <section className="dice-card" aria-live="polite">
       <div className={`remaining-panel ${remaining < 0 ? 'is-negative' : remaining === 0 ? 'is-zero' : ''}`}>
         <span className="eyebrow">のこり設定値</span>
