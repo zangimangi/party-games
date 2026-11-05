@@ -1,0 +1,36 @@
+.roulette-page { max-width: 720px; }
+.roulette-rules { margin: 18px 0 0; padding: 17px 20px; background: #efe6d8; border-radius: 14px; }
+.roulette-rules h2 { margin: 7px 0 10px; font-size: 17px; }
+.roulette-rules ol { margin: 0; padding-left: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px 20px; color: #716d64; font-size: 11px; line-height: 1.6; }
+.roulette-table { max-width: 500px; margin: 20px auto; padding: 20px 22px 16px; text-align: center; color: #f8efd9; background: radial-gradient(ellipse at center, #176c48 0%, #0a4e35 66%, #073d2a 100%); border: 8px solid #b48a4c; border-radius: 28px; box-shadow: 0 13px 28px #2b261d24, inset 0 0 0 2px #e4c783; overflow: hidden; }
+.roulette-status { display: flex; justify-content: space-between; color: #e7d19e; font: 9px var(--mono); letter-spacing: .16em; }
+.wheel-scene { width: min(72vw, 280px); aspect-ratio: 1; margin: 15px auto 13px; position: relative; display: grid; place-items: center; }
+.wheel-pointer { position: absolute; top: -4px; z-index: 3; color: #f4d888; font-size: 25px; text-shadow: 0 2px 2px #0008; }
+.wheel { width: 100%; height: 100%; border-radius: 50%; border: 9px solid #d5b56b; background: repeating-conic-gradient(#982d2b 0deg 44.5deg, #d5b56b 44.5deg 45deg, #202321 45deg 89.5deg, #d5b56b 89.5deg 90deg); box-shadow: inset 0 0 0 3px #513820, 0 4px 12px #0008; position: relative; transition: transform 7s cubic-bezier(.08,.72,.13,1); }
+.wheel-hub { position: absolute; inset: 39%; display: grid; place-items: center; border-radius: 50%; border: 3px solid #e6c97f; background: radial-gradient(circle, #d9bd7b, #916b35); font-size: 25px; box-shadow: 0 2px 8px #0008; }
+.roulette-ball { --orbit-radius: min(40vw, 110px); position: absolute; top: 50%; left: 50%; z-index: 2; color: #fff9d9; font-size: 26px; line-height: 1; transform: translate(-50%, -50%) rotate(var(--ball-angle)) translateY(calc(-1 * var(--orbit-radius))); text-shadow: 0 0 5px #fff, 0 2px 4px #000; }
+.ball-moving { animation: ball-orbit 7s linear 1; }
+@keyframes ball-orbit { from { transform: translate(-50%, -50%) rotate(0deg) translateY(calc(-1 * var(--orbit-radius))); } to { transform: translate(-50%, -50%) rotate(360deg) translateY(calc(-1 * var(--orbit-radius))); } }
+.roulette-voting { min-height: 118px; }
+.roulette-turn { margin: 7px 0 9px; font-size: 13px; font-weight: 700; }
+.roulette-turn small { display: block; margin-top: 4px; color: #d5d7c5; font-size: 10px; font-weight: 400; }
+.roulette-vote-buttons { display: flex; justify-content: center; gap: 12px; }
+.roulette-vote-buttons button { min-width: 124px; min-height: 48px; display: flex; justify-content: center; align-items: center; gap: 9px; border: 1px solid #e4cb8f; border-radius: 8px; color: white; background: #174934; font-weight: 700; }
+.roulette-vote-buttons button:active { transform: scale(.96); }
+.red-dot,.black-dot { width: 14px; height: 14px; border-radius: 50%; background: #c83d38; box-shadow: inset 0 0 0 2px #ffffff44; }
+.black-dot { background: #202322; }
+.votes-ready,.spinning-copy { margin: 15px 0 12px; font-size: 12px; }
+.spin-button { margin: 8px auto 12px; background: #d8b966; color: #302719; box-shadow: 0 5px 0 #977b3e; }
+.spin-button:disabled { opacity: .65; cursor: default; }
+.vote-peek { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 4px 0 12px; font-size: 12px; }
+.vote-peek small { color: #c5d4c7; font-size: 10px; }
+.roulette-outcome { padding: 0 0 10px; }
+.roulette-outcome>span { display: block; color: #d5d7c5; font-size: 11px; }
+.roulette-outcome>strong { display: block; margin: 3px 0; font-size: 42px; line-height: 1.2; }
+.roulette-outcome>strong.red { color: #ff7971; }
+.roulette-outcome>strong.black { color: #f5f1e7; }
+.roulette-outcome>strong small { font-size: 17px; }
+.roulette-outcome p { margin: 8px 0 12px; font-size: 13px; font-weight: 700; }
+.roulette-footnote { margin: 12px 0 0; color: #c7d7ca; font-size: 9px; }
+@media (max-width: 600px) { .roulette-rules { padding: 14px; } .roulette-rules ol { grid-template-columns: 1fr; gap: 2px; } .roulette-table { margin: 15px auto; padding: 16px 13px 13px; border-width: 6px; border-radius: 22px; } .wheel-scene { width: min(68vw, 248px); } }
+@media (prefers-reduced-motion: reduce) { .wheel { transition-duration: .01ms; } .ball-moving { animation-duration: .01ms; } }

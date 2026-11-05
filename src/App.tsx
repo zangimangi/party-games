@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import DiceGame from './games/dice/DiceGame'
 import HighLowGame from './games/high-low/HighLowGame'
 import MinorityGame from './games/minority/MinorityGame'
+import RouletteGame from './games/roulette/RouletteGame'
 
 function readRoute() { return window.location.hash.replace(/^#\/?/, '') || 'home' }
 export default function App() {
@@ -11,5 +12,6 @@ export default function App() {
   if (route === 'dice') return <DiceGame />
   if (route === 'high-low') return <HighLowGame />
   if (route === 'minority') return <MinorityGame />
+  if (route === 'roulette') return <RouletteGame />
   return <Home onOpenGame={(game) => { window.location.hash = `/${game}` }} />
 }
